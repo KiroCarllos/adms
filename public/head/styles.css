@@ -1,0 +1,521 @@
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd;
+}
+
+.header {
+    background-color: #F0F4F7;
+    padding-top: 20px;
+    text-align: center;
+    display:block;
+
+}
+#admslogoC{
+    padding-top: 2%;
+    width: 5%; 
+    text-align: center; 
+    transform: translate(-20px,-40px);
+    
+  }
+#profilePic{
+    float: left;
+    transform: translateY(-20px);
+}
+
+
+  .navbar { 
+    height: 100%; 
+    width: 100px; 
+    position: fixed; 
+    background-color: #F0F4F7; 
+    padding-right: 30px;
+}
+
+  .navbar a { 
+    float: left;
+    display: block; 
+    color: #648884; 
+    font-weight: bold;
+    text-align: center; 
+    padding: 25px 16px; 
+    text-decoration: none; 
+    display:block;
+}
+.navbar a.active {
+  width: 99%;
+  background-color:  #BDCFCB;
+  color: #648884;
+}
+
+  .navbar a:hover { 
+    width: 99%;
+    background-color: #BDCFCB; 
+    color: #648884; }
+  
+  .main { 
+    margin-left: 130px; 
+    padding: 0px; } 
+
+
+    /* layout code ends here */
+
+    .hnavbar {
+      height: 50px;
+      width: 100%; /* Use the full width of the container */
+      background-color: #E5E5E5;
+      display: flex; /* Use flexbox to create a horizontal layout */
+      justify-content: space-around; /* Distribute the links evenly */
+      align-items: center; /* Center the links vertically */
+      transform: translateY(-50px);
+    }
+    
+    .hnavbar a {
+      width: 100%;
+      display: block;
+      color: #0C552D;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      padding: 25px 16px;
+    }
+    
+    .hnavbar a.hactive {
+      height: 4px;
+      background-color: #ffffff;
+      color: #0C552D;
+    }
+    
+    .hnavbar a:hover {
+      height: 4px;
+      background-color: #ffffff;
+      color: #0C552D;
+    }
+
+
+
+
+    .contents{
+      background-color: #F0F4F7;
+      margin: 10px;
+      padding: 20px;
+    }
+    #contenttxt {
+      color: #648884;
+      display: inline-block;
+      font-weight: bold;
+
+    }
+    #contenttxt2{
+      color: #0C552D;
+      font-weight: bold;
+    }
+    #contenttxtt2{
+      color: #0C552D;
+      font-weight: bold;
+      padding-left: 30px;
+    }
+    #committee{
+      color: #0C552D;
+      font-weight: bold;
+    }
+    #contenttxt22{
+      color: #0C552D;
+      font-weight: bold;
+      margin-top: 150px;
+    }
+    
+    #PD {
+      display: inline-block;
+      width: 400px; /* Adjust the width as needed */
+      margin-left: 70px; /* Adjust the spacing as needed */
+    }
+    #missiongoals {
+     border: none;
+     color: #648884;
+    }
+
+
+    .missiongoals-container {
+      position: relative;
+      width: 100%;
+     }
+     .membersHead-container{
+      position: relative;
+      width: 100%;
+     }
+     
+     .missiongoals-textarea {
+      width: 70%;
+      height: 100px;
+      padding: 5px;
+      resize: none;
+     }
+     .membersHead-textarea{
+      width: 70%;
+      height: 100px;
+      padding: 5px;
+      resize: none;
+     }
+     
+     
+     .pen-icon {
+      float: right;
+      transform: translate(-375px, -35px);
+      top: 5px;
+      right: 10px;
+      border: none;
+      background: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #648884;
+     }
+     
+     .last-updated-text {
+      float: right;
+      transform: translateX(-100px);
+      bottom: 5px;
+      right: 10px;
+      font-size: 1em;
+      color: #648884;
+      
+     }
+     -------------------------
+
+
+     .report{
+      margin: 30px;
+     }
+
+    #report option[value=""]{
+      display: none;
+  }
+
+  .committeename{
+    width: 30%;
+    margin-left: 10%;
+  }
+
+  #CH{
+    width: 30%;
+    margin-left: 11%;
+    height: 30px;
+  }
+
+  #CM{
+    width: 30%;
+    margin-left: 8.8%;
+    height: 60px;
+  }
+ 
+  .container{
+    background-color: #ffffff;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 7%;
+    transform: translateY(-40px);
+  }
+
+  .containercom{
+    background-color: #ffffff;
+    transform: translateY(-20px);
+    width: 50%;
+  }
+  #contenttxtt {
+    color: #648884;
+    display: inline-block;
+    padding-left: 30px;
+  }
+  #contenttxttt{
+    color: #648884;
+    display: inline-block;
+    padding-left: 30px;
+    transform: translateY(-90px);
+  }
+
+  #contenttxtask{
+    color: #648884;
+    display: block;
+    padding-left: 30px;
+    padding-top: 30px;
+
+  }
+
+
+  .taskname{
+    width: 30%;
+    margin-left: 10%;
+    transform: translateY(5px);
+    height: 100px;
+  }
+  #button-plus{
+    color: #648884;
+    font-size: 300%;
+    float: right;
+    border: none;
+    background-color: transparent;
+    margin-top: 70px;
+    transform: translateX(-450px);
+    cursor: pointer;
+  }
+  #button-plus:hover{
+  opacity: 0.5;    
+  }
+  .taskdate{
+    width: 30%;
+    margin-left: 6.5%;
+    transform: translateY(5px);
+  }
+  .invalid {
+    border-color: red;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+   }
+  .create {
+    align-items: center;
+    color: #0C552D;
+    background-color: #ffffff;
+    font-size: larger;
+    font-family: 'Times New Roman', serif;
+    padding: 20px;
+    border-color: #648884;
+    border-radius: 20px;
+  }
+  .create:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.5, 1);
+
+  }
+  --------------------------------------------------
+  .btn {
+    background-color: white;
+    cursor: pointer;
+  }
+
+  #startend{
+    margin-left: 50%;
+  }
+  #sem{
+    display: inline-block;
+    width: 400px; /* Adjust the width as needed */
+    }
+
+    .containerr{
+      background-color: #ffffff;
+      display: inline;
+      padding: 3%;
+      text-align: left;
+    }
+
+
+    .btn-group {
+      height: 80px; /* Set the desired fixed height */
+      overflow-y: scroll;
+      float: right;
+      margin-right: 850px;
+      width: 150px;
+      border: 1px solid #849f9c; /* Green border */
+
+    }
+    
+    .btn-group button {
+      background-color: white; /* Green background */
+      border: 1px solid #849f9c; /* Green border */
+      color: #849f9c; /* White text */
+      padding: 10px 24px; /* Some padding */
+      cursor: pointer; /* Pointer/hand icon */
+      display: block; /* Display the buttons as block elements */
+      width: 100%; /* Set the width to 100% of the container */
+    }
+    
+    .btn-group button:not(:last-child) {
+      border-bottom: none; /* Prevent double borders */
+    }
+    
+    /* Add a background color on hover */
+    .btn-group button:hover {
+      background-color: #dde6e5;
+    }
+
+    #transfer {
+      float: right;
+      transform: translate(-330px, 20px);
+      font-size: 20px;
+      width: 40px;
+      height: 20px;
+      line-height: 40px;
+      text-align: center;
+      border: none;
+      background-color: transparent;
+      color: #648884;
+      cursor: pointer;
+      font-size: 200%;
+    }
+    
+    #transfer:hover {
+      color: #8ca8a5;    }
+    #selectedBox{
+      background-color: white;
+      border: solid rgb(213, 213, 213);
+      border-width: 2px;
+      height: 60px;
+      width: 250px;
+      float: right;
+      transform: translateX(-300px);
+      overflow-y: scroll;
+      display: block;
+    }
+
+    #copiedTasks{
+      background-color: white;
+      border: solid rgb(213, 213, 213);
+      border-width: 2px;
+      height: 100px;
+      width: 900px;
+      float: right;
+      transform: translateX(-185px);
+      overflow-y: scroll;
+      display: block;
+    }
+    #request{
+      width: 20%;
+      height: 100px;
+      padding: 5px;
+      margin-left: 30px;
+      margin-top: 50px;
+      resize: none;
+    }
+
+    #sendRequest{
+      color: #648884;
+      display: inline-block;
+      font-weight: bold;
+      transform: translateY(-100px);    
+    }
+    ------------
+.taskContainer{
+  background-color: white;
+  display: block;
+}
+
+
+.taskcontainer{
+  background-color: #ffffff;
+  margin-right: 15%;
+  padding-bottom: 7%;
+  margin-top: 7%;
+}
+label {
+  padding-left: 30px;
+  font-size: 1rem;
+}
+.rbtn-group{
+  height: 80px; /* Set the desired fixed height */
+  overflow-y: scroll;
+  float: right;
+  margin-right: 600px;
+  margin-top: 50px;
+  width: 150px;
+  border: 1px solid #849f9c; /* Green border */ 
+}
+
+
+.rbtn-group button {
+  background-color: white; /* Green background */
+  border: 1px solid #849f9c; /* Green border */
+  color: #849f9c; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  display: block; /* Display the buttons as block elements */
+  width: 100%; /* Set the width to 100% of the container */
+}
+
+.rbtn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.rbtn-group button:hover {
+  background-color: #dde6e5;
+}
+
+
+#datecom{
+  color: #0C552D;
+  font-weight: bold;
+  padding-right: 10px;
+}
+#transfercom {
+  float: right;
+  transform: translate(-570px, -70px);
+  font-size: 20px;
+  width: 40px;
+  height: 20px;
+  line-height: 40px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  color: #648884;
+  cursor: pointer;
+  font-size: 200%;
+}
+
+
+#uploadfile {
+  color: #648884;
+  display: block;
+  font-weight: bold;
+
+}
+#filetitle{
+  width: 500px;
+  margin-bottom: 30px;
+}
+#uploadfiles {
+  color: #648884;
+  display: block;
+  font-weight: bold;
+  padding-bottom: 100px;
+}
+
+.fbtn-group {
+  height: 80px; /* Set the desired fixed height */
+  overflow-y: scroll;
+  float: right;
+  margin-right: 750px;
+  width: 550px;
+  border: 1px solid #849f9c; /* Green border */
+  transform: translateY(-100px);
+}
+
+.fbtn-group button {
+  background-color: white; /* Green background */
+  border: 1px solid #849f9c; /* Green border */
+  color: #849f9c; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  display: block; /* Display the buttons as block elements */
+  width: 100%; /* Set the width to 100% of the container */
+}
+
+.fbtn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.fbtn-group button:hover {
+  background-color: #dde6e5;
+}
+
+#uploadevent{
+  font-size: 30px;
+  color:#0C552D;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+}

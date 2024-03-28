@@ -1,0 +1,112 @@
+body { background: #e6f7f6; }
+figure {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0; left: 0; right: 0;
+  width: 6.250em; height: 6.250em;
+  animation: rotate 2.4s linear infinite;
+}
+.white {
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: white;
+  animation: flash 2.4s linear infinite;
+  opacity: 0;
+}
+.dot {
+  position: absolute;
+  margin: auto;
+  width: 2.4em; height: 2.4em;
+  border-radius: 100%;
+  transition: all 1s ease;
+    color: #a0dbd7;
+}
+.dot:nth-child(2) { top: 0; bottom: 0; left: 0; background: #155a55; animation: dotsY 2.4s linear infinite; }
+.dot:nth-child(3) { left: 0; right: 0; top: 0; background: #3c908a; animation: dotsX 2.4s linear infinite; }
+.dot:nth-child(4) { top: 0; bottom: 0; right: 0; background: #79c4bf; animation: dotsY 2.4s linear infinite; }
+.dot:nth-child(5) { left: 0; right: 0; bottom: 0; background: #a0dbd7; animation: dotsX 2.4s linear infinite; }
+
+@keyframes rotate {
+  0% { transform: rotate( 0 ); }
+  10% { width: 6.250em; height: 6.250em; }
+  66% { width: 2.4em; height: 2.4em; }
+  100%{ transform: rotate(360deg); width: 6.250em; height: 6.250em; }
+}
+
+@keyframes dotsY {
+  66% { opacity: .1; width: 2.4em; }
+  77%{ opacity: 1; width: 0; }
+}
+@keyframes dotsX {
+  66% { opacity: .1; height: 2.4em;}
+  77%{ opacity: 1; height: 0; }
+}
+
+@keyframes flash {
+  33% { opacity: 0; border-radius: 0%; }
+  55%{ opacity: .6; border-radius: 100%; }
+  66%{ opacity: 0; }
+}
+
+
+
+
+
+#heading{
+    font-family: serif;
+    color: #74999B;
+    text-shadow: #bebebe 0.1em 0.1em 0.2em;
+    text-align: center;
+    padding-top: 7%;
+    font-size: 60px;
+}
+
+
+---------------------------
+.role {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icons a {
+    margin: 18px;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .icons a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+
+  .icons a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .icons #head {
+    width: 350px;
+    height: 350px;
+  }
+
+  .icons #member {
+    width: 350px;
+    height: 350px;
+  }

@@ -1,0 +1,22 @@
+commitee 1
+commitee head: prohram direc
+
+members: mem 1
+mem2
+mem3 
+
+/////////////////////
+commite 2
+head commitee: commitee head
+members:
+program director
+memb 2
+memb3
+
+/////////////////////////
+commitee3
+hcommitee head: commitee head
+mrmbrs:
+acadims advisor
+mebe3
+memb4 
