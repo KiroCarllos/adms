@@ -12,11 +12,13 @@ class ProgramRequest extends Model
     protected $fillable = [
         "director",
         "mission",
+        "order_number",
         "goals",
         "role",
     ];
     protected $casts = [
-        "director"  => ["array"]
+        "director"  => "json",
+        "order_number"  => "integer",
     ];
     public function files(){
         return $this->hasMany(ProgramRequestFile::class,"program_request_id","id");

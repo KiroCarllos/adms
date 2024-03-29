@@ -15,8 +15,9 @@
             <div>
                 <h4 id="contenttxt">Committee Members</h4>
                 <select onchange="redirectToSelectedCommittee()" required class="js-example-basic-multiple" name="member_ids" id="CM" >
+                    <option disabled selected>--</option>
                     @forelse($membersUsers as $memberUser)
-                        <option {{ request()->get("id") ==$memberUser->id ?"selected":""  }} value="{{ $memberUser->id }}">{{ $memberUser->Name ."  [".$memberUser->role_name."]" }}</option>
+                        <option {{ request()->get("id") ==$memberUser->id ?"selected":""  }} value="{{ $memberUser->id }}">{{ $memberUser->Name }}</option>
                     @empty
                         <option>--</option>
                     @endforelse
@@ -32,6 +33,7 @@
             <div class="containercom">
                 @forelse($commits as $commit)
                     <h4 id="contenttxt2">{{ $commit->commit_name }}</h4>
+                    <h4 id="contenttxt2">Role : @if(in_array(request()->get("id"),$commit->head_id)) Committee Head @elseif(in_array(request()->get("id"),$commit->member_ids)) Committee Member  @endif </h4>
                     <h4 id="datecom">Start Date: {{ $commit->start_date }}</h4>
                     <h4 id="datecom">End Date: {{ $commit->end_date }}</h4>
                     <hr>

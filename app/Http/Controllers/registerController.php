@@ -58,7 +58,7 @@ public function register(){
 
         if (Auth::attempt($credentials)) {
             if(auth()->user()->role == "head"){
-                return redirect()->route("roleHead","becolar")->with('success', 'Login successful!');
+                return redirect()->route("roleHead","Bachelor")->with('success', 'Login successful!');
             }
 
             return redirect('/role')->with('success', 'Login successful!');

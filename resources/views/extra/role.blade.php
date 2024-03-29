@@ -12,7 +12,7 @@
       <h1 id="heading">Are you a?</h1>
 {{--        @dd(auth()->user()->role)--}}
       <div class="icons">
-        <a href="{{ route("roleHead","becolar") }}">
+        <a href="{{ route("roleHead","Bachelor") }}">
           <img id="head" src="{{ asset('extra/head.png') }}" alt="head" />
         </a>
 

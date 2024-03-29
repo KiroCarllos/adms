@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Models\AcademicAdvisor;
 use App\Models\ProgramRequest;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HeadController;
@@ -20,22 +21,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/saveProgramRequest', [HeadController::class,"saveProgramRequests"])->name("saveProgramRequest");
+Route::post('/addProgramRequest', [HeadController::class,"addProgramRequest"])->name("addProgramRequest");
 Route::post('/saveCommit', [HeadController::class,"saveCommit"])->name("saveCommit");
+Route::post('/updateCommit', [HeadController::class,"updateCommit"])->name("updateCommit");
 Route::post('/saveMemberFiles', [HeadController::class,"saveMemberFiles"])->name("saveMemberFiles");
 Route::post('/storeEvent', [headEventController::class, 'store'])->name('head.storeEvent');
+Route::post('/saveAcademicAdvisors', [headEventController::class, 'saveAcademicAdvisors'])->name('head.saveAcademicAdvisors');
 
 
-Route::get('/roleHead/{director}', function ($director="master") {
-        $member_ids = \App\Models\Member::where("Role","Program Director")->pluck("UserId")->toArray();
-        $users = \App\Models\User::all();
-       $programRequest = ProgramRequest::where("role",$director ?? "master")->first();
+Route::get('/roleHead/{director}', function ($director) {
+    $users = \App\Models\User::orderBy("points","desc")->get();
+    \App\AI\RecommendationModel::getBestRecommended($users);
+    $programRequest = ProgramRequest::where("role",$director )->first();
 
         return view('head.headProgramsA',compact('users','programRequest'));
 })->name("roleHead");
 
+Route::get('/create_program', function () {
+    $users = \App\Models\User::orderBy("points","desc")->get();
+    \App\AI\RecommendationModel::getBestRecommended($users);
+    return view('head.create_program',compact('users'));
+})->name("create_program");
+
+
 Route::get('/role', function ($director="master") {
+
     if(auth()->user()->role == "head"){
-        return redirect()->route("roleHead","becolar")->with('success', 'Login successful!');
+        return redirect()->route("roleHead","Bachelor")->with('success', 'Login successful!');
     }
     return view('extra.role');
 })->name("role");
@@ -43,20 +55,20 @@ Route::get('/role', function ($director="master") {
 Route::get('/loader', function () {
     return view('extra.loader');
 });
+Route::get('/academic_advisor', function () {
+    $users = \App\Models\User::orderBy("points","desc")->get();
+    \App\AI\RecommendationModel::getBestRecommended($users);
+    $academicAdvisors = AcademicAdvisor::first();
+
+    return view('head.academic_advisor',compact("users","academicAdvisors"));
+})->name("academic_advisor");
 Route::get('/createCommittee', function () {
-    $member_ids = \App\Models\Member::whereIn("Role",["Program Director","Committee Head","Acedmic Advisor"])->pluck("UserId")->toArray();
-    $headUsers = \App\Models\User::whereIn("id",$member_ids)->get();
-    foreach ($headUsers as $headUser){
-        $headUser->setAttribute("role_name",\App\Models\Member::where("UserID",$headUser->id)->pluck("Role")->first());
-    }
-    $member2_ids = \App\Models\Member::whereIn("Role",["Committee Member","Acedmic Advisor"])->pluck("UserId")->toArray();
-    $membersUsers = \App\Models\User::whereIn("id",$member2_ids)->get();
-    foreach ($membersUsers as $member){
-        $member->setAttribute("role_name",\App\Models\Member::where("UserID",$member->id)->pluck("Role")->first());
-    }
-    return view('head.createCommittee',compact("headUsers",'membersUsers'));
+    $users = \App\Models\User::orderBy("points","desc")->get();
+    \App\AI\RecommendationModel::getBestRecommended($users);
+    return view('head.createCommittee',compact("users"));
 })->name("createCommittee");
 Route::get('/committees/all', function () {
+
     if(!is_null(request()->get("id"))){
         $commitObj = \App\Models\Committee::find(request()->get("id"));
     }else{
@@ -64,22 +76,25 @@ Route::get('/committees/all', function () {
     }
 //    dd($commit->commit_name);
     $commits = \App\Models\Committee::all();
-
-    return view('head.committees',compact("commits","commitObj"));
+    $users = \App\Models\User::orderBy("points","desc")->get();
+    \App\AI\RecommendationModel::getBestRecommended($users);
+    return view('head.committees',compact("commits","commitObj","users"));
 })->name("committees");
 Route::get('/dep_members', function () {
+
     $member2_ids = \App\Models\Member::whereIn("Role",["Committee Member","Acedmic Advisor"])->pluck("UserId")->toArray();
-    $membersUsers = \App\Models\User::whereIn("id",$member2_ids)->get();
-    foreach ($membersUsers as $member){
-        $member->setAttribute("role_name",\App\Models\Member::where("UserID",$member->id)->pluck("Role")->first());
-    }
+    $membersUsers = \App\Models\User::orderBy("points","desc")->get();
+//    foreach ($membersUsers as $member){
+//        $member->setAttribute("role_name",\App\Models\Member::where("UserID",$member->id)->pluck("Role")->first());
+//    }
     if(!is_null(request()->get("id"))){
-        $commits = \App\Models\Committee::whereJsonContains("member_ids", request()->get("id"))->get();
+        $commits = \App\Models\Committee::whereJsonContains("member_ids", request()->get("id"))->orWhereJsonContains("head_id", request()->get("id"))->get();
         $member = \App\Models\User::find(request()->get("id"));
     }else{
         $commits = \App\Models\Committee::whereJsonContains("member_ids", $member2_ids[0])->get();
         $member = $membersUsers->first();
     }
+    \App\AI\RecommendationModel::getBestRecommended($membersUsers);
 //    dd($commits);
     return view('head.dep_members',compact("membersUsers","commits","member"));
 })->name("dep_members");

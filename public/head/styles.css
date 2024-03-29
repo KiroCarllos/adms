@@ -14,10 +14,10 @@ body {
 }
 #admslogoC{
     padding-top: 2%;
-    width: 5%; 
-    text-align: center; 
+    width: 5%;
+    text-align: center;
     transform: translate(-20px,-40px);
-    
+
   }
 #profilePic{
     float: left;
@@ -25,22 +25,22 @@ body {
 }
 
 
-  .navbar { 
-    height: 100%; 
-    width: 100px; 
-    position: fixed; 
-    background-color: #F0F4F7; 
+  .navbar {
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    background-color: #F0F4F7;
     padding-right: 30px;
 }
 
-  .navbar a { 
+  .navbar a {
     float: left;
-    display: block; 
-    color: #648884; 
+    display: block;
+    color: #648884;
     font-weight: bold;
-    text-align: center; 
-    padding: 25px 16px; 
-    text-decoration: none; 
+    text-align: center;
+    padding: 25px 16px;
+    text-decoration: none;
     display:block;
 }
 .navbar a.active {
@@ -49,14 +49,14 @@ body {
   color: #648884;
 }
 
-  .navbar a:hover { 
+  .navbar a:hover {
     width: 99%;
-    background-color: #BDCFCB; 
+    background-color: #BDCFCB;
     color: #648884; }
-  
-  .main { 
-    margin-left: 130px; 
-    padding: 0px; } 
+
+  .main {
+    margin-left: 130px;
+    padding: 0px; }
 
 
     /* layout code ends here */
@@ -70,7 +70,7 @@ body {
       align-items: center; /* Center the links vertically */
       transform: translateY(-50px);
     }
-    
+
     .hnavbar a {
       width: 100%;
       display: block;
@@ -80,13 +80,13 @@ body {
       text-decoration: none;
       padding: 25px 16px;
     }
-    
+
     .hnavbar a.hactive {
       height: 4px;
       background-color: #ffffff;
       color: #0C552D;
     }
-    
+
     .hnavbar a:hover {
       height: 4px;
       background-color: #ffffff;
@@ -125,7 +125,7 @@ body {
       font-weight: bold;
       margin-top: 150px;
     }
-    
+
     #PD {
       display: inline-block;
       width: 400px; /* Adjust the width as needed */
@@ -145,7 +145,7 @@ body {
       position: relative;
       width: 100%;
      }
-     
+
      .missiongoals-textarea {
       width: 70%;
       height: 100px;
@@ -158,8 +158,8 @@ body {
       padding: 5px;
       resize: none;
      }
-     
-     
+
+
      .pen-icon {
       float: right;
       transform: translate(-375px, -35px);
@@ -171,7 +171,7 @@ body {
       cursor: pointer;
       color: #648884;
      }
-     
+
      .last-updated-text {
       float: right;
       transform: translateX(-100px);
@@ -179,7 +179,7 @@ body {
       right: 10px;
       font-size: 1em;
       color: #648884;
-      
+
      }
      -------------------------
 
@@ -208,7 +208,11 @@ body {
     margin-left: 8.8%;
     height: 60px;
   }
- 
+.selectw{
+    width: 30%;
+    margin-left: 8.8%;
+    height: 60px;
+}
   .container{
     background-color: #ffffff;
     margin-left: 15%;
@@ -260,7 +264,7 @@ body {
     cursor: pointer;
   }
   #button-plus:hover{
-  opacity: 0.5;    
+  opacity: 0.5;
   }
   .taskdate{
     width: 30%;
@@ -323,7 +327,7 @@ body {
       border: 1px solid #849f9c; /* Green border */
 
     }
-    
+
     .btn-group button {
       background-color: white; /* Green background */
       border: 1px solid #849f9c; /* Green border */
@@ -333,11 +337,11 @@ body {
       display: block; /* Display the buttons as block elements */
       width: 100%; /* Set the width to 100% of the container */
     }
-    
+
     .btn-group button:not(:last-child) {
       border-bottom: none; /* Prevent double borders */
     }
-    
+
     /* Add a background color on hover */
     .btn-group button:hover {
       background-color: #dde6e5;
@@ -357,7 +361,7 @@ body {
       cursor: pointer;
       font-size: 200%;
     }
-    
+
     #transfer:hover {
       color: #8ca8a5;    }
     #selectedBox{
@@ -396,7 +400,7 @@ body {
       color: #648884;
       display: inline-block;
       font-weight: bold;
-      transform: translateY(-100px);    
+      transform: translateY(-100px);
     }
     ------------
 .taskContainer{
@@ -422,7 +426,7 @@ label {
   margin-right: 600px;
   margin-top: 50px;
   width: 150px;
-  border: 1px solid #849f9c; /* Green border */ 
+  border: 1px solid #849f9c; /* Green border */
 }
 
 

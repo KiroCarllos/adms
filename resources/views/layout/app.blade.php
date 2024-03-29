@@ -6,9 +6,26 @@
     <link rel="stylesheet" href="{{ asset('head/styles.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    @yield("css")
     <title>Programs</title>
     <style>
+        .alert {
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+            margin-left: 123px;
+        }
+        .alert-success{
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
         .create {
             align-items: center;
             color: #0C552D;
@@ -32,12 +49,28 @@
 
 
 <div class="navbar">
-    <a @if(strpos(request()->getRequestUri(), "roleHead") !== false) class="active" @endif href="{{ route("roleHead","becolar") }}">Programs</a>
+    <a @if(strpos(request()->getRequestUri(), "create_program") !== false) class="active" @endif href="{{ route("create_program") }}">Create Program</a>
+    <a @if(strpos(request()->getRequestUri(), "roleHead") !== false) class="active" @endif href="{{ route("roleHead",\App\Models\ProgramRequest::query()->orderBy("order_number")->pluck("role")->first()) }}">Programs</a>
     <a @if(strpos(request()->getRequestUri(), "createCommittee") !== false) class="active" @endif  href="{{ route("createCommittee") }}">Create Committee</a>
     <a  @if(strpos(request()->getRequestUri(), "committees") !== false) class="active" @endif href="{{ route("committees") }}">Committees</a>
     <a @if(strpos(request()->getRequestUri(), "dep_members") !== false) class="active" @endif href="{{ route("dep_members") }}">Department Members</a>
+    <a @if(strpos(request()->getRequestUri(), "academic_advisor") !== false) class="active" @endif href="{{ route("academic_advisor") }}">Academic Advisor</a>
     <a @if(strpos(request()->getRequestUri(), "head_events") !== false) class="active" @endif href="{{ route("head_events") }}">Events</a>
 </div>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     @yield("content")
 
 

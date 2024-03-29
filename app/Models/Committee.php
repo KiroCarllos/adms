@@ -19,7 +19,8 @@ class Committee extends Model
         "end_date",
     ];
     protected $casts = [
-        "member_ids" => "array"
+        "member_ids" => "array",
+        "head_id" => "array"
     ];
     public function head(){
         return $this->belongsTo(User::class,"head_id","id");

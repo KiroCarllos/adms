@@ -22,6 +22,9 @@ class User extends Authenticatable
         'idnum',
         'phone',
         'email',
+        'points',
+        'first_cv',
+        'sec_cv',
         'password',
     ];
 
@@ -47,4 +50,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function scopeBestCVRRecommendation($q){
+        $point = 0;
+        if (!is_null($this->first_cv)) {
+            $point = !is_null($this->sec_cv) ? $this->update(["points", 2]) : $this->update(["points", 1]);
+        }
+    }
 }
