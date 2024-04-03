@@ -55,7 +55,7 @@
     <a  @if(strpos(request()->getRequestUri(), "committees") !== false) class="active" @endif href="{{ route("committees") }}">Committees</a>
     <a @if(strpos(request()->getRequestUri(), "dep_members") !== false) class="active" @endif href="{{ route("dep_members") }}">Department Members</a>
     <a @if(strpos(request()->getRequestUri(), "academic_advisor") !== false) class="active" @endif href="{{ route("academic_advisor") }}">Academic Advisor</a>
-    <a @if(strpos(request()->getRequestUri(), "head_events") !== false) class="active" @endif href="{{ route("head_events") }}">Events</a>
+    <a @if(strpos(request()->getRequestUri(), "head_events") !== false) class="active" @endif href="{{ route("head_allEvents") }}">Events</a>
 </div>
     @if ($errors->any())
         <div class="alert alert-danger">

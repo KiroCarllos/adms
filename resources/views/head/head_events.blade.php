@@ -5,8 +5,8 @@
     <!--Here is the code for the content-->
     <div class="main">
         <div class="hnavbar">
-            <a class="hactive" href="{{ route('head_allEvents') }}">View Events</a>
             <a href="{{ route('head_events') }}">Create Events</a>
+            <a class="hactive" href="{{ route('head_allEvents') }}">View Events</a>
         </div>
 
         <h4 id="uploadevent">Create Events</h4>
